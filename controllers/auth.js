@@ -34,7 +34,15 @@ exports.register = (req, res) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
 
-        res.send("testing");
+        db.query('INSERT INTO users SET ?', {name: name, email: email, password: hashedPassword,  }, (error, results) => {
+            if (error){
+                console.log(error);
+            } else {
+                return res.render('register', {
+                    message: 'Berhasi; daftar'
+                });
+            }
+        })
     });
 }
  

@@ -24,9 +24,6 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
 
-
-
-
 // console.log(__dirname);
 app.set('view engine', 'hbs');
 
@@ -34,13 +31,14 @@ db.connect ((error) => {
     if (error){
         console.log(error)
     }else {
-        console.log("Mysql connected")
+        console.log("Mysql connected");
     }
 })
 
 // Define routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
 app.listen(5001, () => {
     console.log("server started on port 5001");
 });
