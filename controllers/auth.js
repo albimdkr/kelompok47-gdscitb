@@ -1,4 +1,6 @@
-const mysql = require("mysql");
+const mysql = require("mysql"); 
+const jwt = require ('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 const db = mysql.createConnection ({
     host : process.env.DATABASE_HOST,
@@ -12,9 +14,9 @@ exports.register = (req, res) => {
     console.log(req.body);
 
 
-    const {name, email, password, passwordConfirm} = req.body;
+    const { name, email, password, passwordConfirm } = req.body;
 
-    db.query('SELECT email FROM users WHERE email = ?', [email], (error, results) => {
+    db.query('SELECT email FROM users WHERE email = ?', [email], async  (error, results) => {
         if (error){
             console.log(error);
         }
@@ -28,8 +30,11 @@ exports.register = (req, res) => {
                 message: 'Password tidak cocok'
             });
         }
-    })
 
-    res.send("form sumbitted");
+        let hashedPassword = await bcrypt.hash(password, 8);
+        console.log(hashedPassword);
+
+        res.send("testing");
+    });
 }
  
