@@ -14,8 +14,19 @@ const db = mysql.createConnection ({
     database : process.env.DATABASE
 });
 
+
+//parse URL-encoded bodies as sent by HTML forms
 const publicDirectory = path.join(__dirname, './public');
 app.use(express.static(publicDirectory));
+
+//parse JSON bodies sent api client
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
+
+
+
+
 // console.log(__dirname);
 app.set('view engine', 'hbs');
 
@@ -27,20 +38,9 @@ db.connect ((error) => {
     }
 })
 
-app.get ('/', (req, res) => {
-    //res.send("<h1> Home page</h>")
-    res.render("index");
-});
-
-app.get ('/index', (req, res) => {
-    res.render("index");
-});
-
-
-app.get ('/register', (req, res) => {
-    res.render("register");
-});
-
+// Define routes
+app.use('/', require('./routes/page'));
+app.use('/auth', require('./routes/auth'));
 app.listen(5001, () => {
     console.log("server started on port 5001");
 });
