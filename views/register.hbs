@@ -8,39 +8,56 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title> Welcome </title>
+    <title>Register</title>
   </head>
   <body>
-    
     <nav>
-          <h5 class="titleNav">GDSCmovie</h5>
+        <h4>GDSCmovie</h4>
         <ul>
             <li><a href="/login">Login</a></li>
             <li><a href="/register">Register</a></li>
         </ul>
     </nav>
-    
 
+    <div class="container mt-4">
+        <div class="card" >
+            <div class="card-header">
+                Register form
+            </div>
+            <div class="card-body">
+            <form>
+            <div class="form-group">   
+                 <label for="name" class="form-label">Name</label>
+                 <input type="text" class="form-control" id="name" name="name">
+            </div>
+               
 
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col">
-        <h1>Selamat datang di GDSCmovie</h1>
-      </div>
+            <div class="form-group">   
+                 <label for="email" class="form-label">Email</label>
+                 <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="form-group">   
+                 <label for="password" class="form-label">Password</label>
+                 <input type="password" class="form-control" id="password" name="password">
+            </div>
+
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+        </div>
     </div>
-
-
-
-<div class="card">
-  <img src="/img/coroselIMDB.jpg" class="img-fluid" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">GDSCmovie</h5>
-    <p class="card-text">Berbagai film-film premium dan banyak genrennya, Jika anda belum register silahkan registrasi terlebih dahulu</p>
-    <a href="/register" class="btn btn-primary"> Register </a>
-    <a href="/login" class="btn btn-primary"> Login </a>
-  </div>
 </div>
-    
+
+
+
+   
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

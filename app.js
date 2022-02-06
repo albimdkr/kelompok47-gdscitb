@@ -32,6 +32,15 @@ app.get ('/', (req, res) => {
     res.render("index");
 });
 
+app.get ('/index', (req, res) => {
+    res.render("index");
+});
+
+
+app.get ('/register', (req, res) => {
+    res.render("register");
+});
+
 app.listen(5001, () => {
     console.log("server started on port 5001");
 });
