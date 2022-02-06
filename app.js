@@ -13,6 +13,8 @@ const db = mysql.createConnection ({
     database : process.env.DATABASE
 });
 
+app.set('view engine', 'hbs');
+
 db.connect ((error) => {
     if (error){
         console.log(error)
