@@ -5,9 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    {{!-- Font Awesome --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+    {{!-- Styles css --}}
     <link rel="stylesheet" href="/styles.css">
+
     <title>Registrasi</title>
   </head>
   <body>
@@ -32,43 +38,38 @@
 
     <br>
 
-    <div class="container mt-2">
-        <div class="card" >
-            <div class="card-header">
-                Registrasi form
-            </div>
-            <div class="card-body">
-            <form action="/auth/register" method="POST">
-            <div class="form-group">   
-                 <label for="name" >Name</label>
-                 <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-        
-            <div class="form-group">   
-                 <label for="email">Email</label>
-                 <input type="email" class="form-control" id="email" name="email" required>
-            </div>
 
-            <div class="form-group">   
-                 <label for="password">Password</label>
-                 <input type="password" class="form-control" id="password" name="password" requred>
-            </div>
 
-            <div class="form-group">   
-                 <label for="passwordConfirm">Confirmasi Password</label>
-                 <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>
-            </div>
+<div class="login">
+			<h1>Registrasi</h1>
+			<form action="/auth/register" method="POST">
+				<label for="name">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="name" placeholder="Masukan nama" id="name" required>
 
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </form>
-        </div>
-    </div>
+        <label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="email" placeholder="Masukan akun email" id="email" required>
+
+        <label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Masukan password" id="password" required>
+
+				<label for="passwordConfirm">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="passwordConfirm" placeholder="Konfirmasi Password" id="passwordConfirm">
+				<input type="submit" value="Simpan">
+			</form>
 
     {{#if message }}
         <h4 class="alert alert-warning mt-4">{{message}}</h4>
     {{/if }}
-        
-</div>
+
+		</div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

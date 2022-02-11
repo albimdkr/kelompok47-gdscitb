@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+
+/* Universal */
 * {
   padding: 0;
   margin: 0;
@@ -8,9 +10,12 @@
 
 body {
   background-color: #353836;
-  color: white;
+  color: #006097;
   font-family: "Poppins", sans-serif;
 }
+
+
+/* Header */
 
 header a {
   text-decoration: none;
@@ -24,6 +29,8 @@ header {
   justify-content: space-between;
 }
 
+
+/* Navbar */
 #brand {
   font-weight: bold;
   font-size: 18px;
@@ -32,7 +39,7 @@ header {
 }
 
 #brand a {
-  color:"color: #011B2A";
+  color: #006097;
 }
 
 ul {
@@ -137,34 +144,58 @@ ul li:hover {
   }
 }
 
-
-/* nav{
-    background-color: darkcyan;
-    color: #fff;
-    padding: 30px 60px;
-    display: flex;
-    justify-content: space-between;
+/* login */
+.login {
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.login h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.login form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.login form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #006097;
+  color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.login form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+ margin-top: 20px;
+  background-color: #006097;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+background-color: #006097;
+  transition: background-color 0.2s;
 }
 
-nav ul{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-nav li {
-    list-style: none;
-}
 
-nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 8px;
-}
 
-nav li a:hover {
-    color: black;
-    text-decoration: none;
-
-} */
