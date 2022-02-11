@@ -2,6 +2,10 @@ const express = require ("express");
 const path = require('path');
 const mysql = require("mysql");
 const dotenv = require('dotenv');
+const connection = require("mysql/lib/Connection");
+const bodyParser = require ("body-parser");
+
+
 
 dotenv.config({ path: './.env'});
 
@@ -38,6 +42,29 @@ db.connect ((error) => {
 // Define routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
+// //login
+// app.post("/",encoder, function(req, res){
+//     var email = req.body.email;
+//     var password = req.body.password;
+
+//     connection.query("SELECT * FROM user WHERE email = ? AND password = ?", [username, password], function (error, results, fields ){
+//         if (results.length > 0){
+//             res.redirect("/dashboard");
+//         } else {
+//             res.redirect("/");
+//         }
+
+//         res.end();
+//     })
+// })
+
+// //when login success
+ 
+// app.get("/dashboard", function(req, res){
+//     res.sendFile(__dirname + "/dashboard.hbs");
+// })
+
 
 app.listen(5001, () => {
     console.log("server started on port 5001");
